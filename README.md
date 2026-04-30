@@ -11,5 +11,5 @@ I'm lazy to do stuff `p;-;q`
 
 
 ## Building
-1. Clone repository: `git clone https://github.com/brickwall2900/FileDecay.git`
-2. Build: `gradlew build` or `gradlew fatJar`
+1. Clone repository: `git clone https://github.com/brickwall2900/Polonium.git`
+2. Build: `gradlew build` or `gradlew shadowJar`

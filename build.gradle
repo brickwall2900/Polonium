@@ -1,8 +1,6 @@
-import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
-
 plugins {
     id 'java'
-    id 'com.github.johnrengelman.shadow' version '8.1.1'
+    id 'com.gradleup.shadow' version '9.3.0'
 }
 
 group = 'com.github.brickwall2900'
@@ -38,18 +36,10 @@ test {
     useJUnitPlatform()
 }
 
-tasks.register('fatJar', ShadowJar) {
-    archiveBaseName.set('Polonium')
-    archiveClassifier.set('')
-    archiveVersion.set(version.toString())
-
+jar {
     manifest {
-        attributes 'Main-Class': 'com.github.brickwall2900.polonium.Polonium'  // Set your main class
+        attributes 'Main-Class': 'com.github.brickwall2900.polonium.Polonium'
     }
-
-    from(sourceSets.main.output)
-
-    configurations = [project.configurations.runtimeClasspath]
 }
 
 tasks.register('generateVersionInfo', JavaCompile) {
